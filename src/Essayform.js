@@ -1,9 +1,9 @@
 import React from "react";
-export default class NameForm extends React.Component{
+export default class EssayForm extends React.Component{
   constructor(props){
     super(props)
 
-    this.state = {value: ""};
+    this.state = {value: "Please write your hobby"};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,11 +22,8 @@ export default class NameForm extends React.Component{
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Name:
-          <input 
-            type ="text" 
-              value={this.state.value} 
-                onChange={this.handleChange}/>
+          Essay:
+          <textarea value={this.state.value} onChange={this.handleChange}/>
         </label>
           <input type="submit" value="Send!"/>
       </form>

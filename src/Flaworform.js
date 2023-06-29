@@ -1,9 +1,9 @@
 import React from "react";
-export default class NameForm extends React.Component{
+export default class FlaworForm extends React.Component{
   constructor(props){
     super(props)
 
-    this.state = {value: ""};
+    this.state = {value: "coconut"};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,11 +22,12 @@ export default class NameForm extends React.Component{
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Name:
-          <input 
-            type ="text" 
-              value={this.state.value} 
-                onChange={this.handleChange}/>
+          Select your favorite taste:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">grapefruit</option>
+            <option value="coconut">coconut</option>
+            <option value="lime">lime</option>
+          </select>
         </label>
           <input type="submit" value="Send!"/>
       </form>
